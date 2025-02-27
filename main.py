@@ -16,8 +16,8 @@ model = LLM(model="gemini/gemini-2.0-flash-exp" ,api_key=api_key)
 class DevCrew:
     """Dev Crew"""
 
-    agents_config = "config/agents.yaml"
-    tasks_config = "config/tasks.yaml"
+    agents_config = "src/pythonuv/config/agents.yaml"
+    tasks_config = "src/pythonuv/config/tasks.yaml"
 
     @agent
     def junior_developer(self) -> Agent:
@@ -106,5 +106,3 @@ if st.button("Generate Code"):
             st.error("No response generated. Please try again.")
     else:
         st.warning("Please enter a problem statement before generating code.")
-    agents_config = "src/python/config/agents.yaml"
-    tasks_config = "src/python/config/tasks.yaml"
