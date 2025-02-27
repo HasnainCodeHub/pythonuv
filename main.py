@@ -46,40 +46,22 @@ class DevCrew:
     
 
 
-
-# from crewai.flow.flow import Flow,start,listen
-
-
-# class MainFlow(Flow):
-#     @start()
-#     def development(self):
-#         result = DevCrew().crew().kickoff(
-#             inputs={"problem": "Develope a Game Using Object Orinted Programming with complete Error Handling"})
-#         self.state['response'] = result
-#         return result
-
-
-#     @listen(development)
-#     def save_as_file(self,res):
-#         with open('response.py', 'w') as f:
-#             f.write(str(self.state['response']))
-#             print("File saved as response.py")
-        
-    
-
-
-
-
-
-# def kickoff():
-#     final = MainFlow()
-#     final_result = final.kickoff()
-
-
    
 
 st.title("Welcome to Hasnain's Agentic World")
 st.title("Python Code Generator Agent")
+
+suggested_queries = [
+    "Make a function who Get Me The Current Weather Of Karachi",
+    "Make a Calculator Use if else for operations with complete error handling",
+    "Make a function which will return me the current time",
+    "Develop a complex Game Using Object Orinted Programming with complete Error Handling",
+    "Make a python Function who get the latest news with the help of api key",
+]
+
+st.write("### Suggested Queries:")
+for query in suggested_queries:
+    st.write(f"- {query}")
 
 user_input = st.text_input("Enter the problem statement:", "")
 
@@ -106,3 +88,50 @@ if st.button("Generate Code"):
             st.error("No response generated. Please try again.")
     else:
         st.warning("Please enter a problem statement before generating code.")
+
+
+
+
+st.sidebar.title("Description:")
+st.sidebar.info(
+    """
+    Welcome to Hasnain's Agentic World – a cutting-edge AI-powered Python Code Generator Agent designed to simplify your coding needs. This intelligent agent leverages Crew AI with Gemini Flash 2.0 to generate high-quality Python code based on your problem statements.
+
+🔹 How It Works:
+
+1-Enter a Problem Statement – Provide a coding problem or requirement.
+
+2-AI-Powered Code Generation – The system processes your request with two specialized AI agents:
+
+    👨‍💻 Junior Developer 
+    (5 years of experience)
+    – Generates the initial 
+      code.
+
+    👨‍🏫 Senior Developer 
+    (20 years of experience) 
+    – Reviews and refines the
+      code to ensure quality.
+
+3-Instant Output & Download – View the generated code instantly and download it as a response.py file for further use.
+
+🚀 Features:
+
+✅ Supports Object-Oriented Programming & Error Handling
+
+✅ Handles a variety of Python tasks – from basic functions to complex applications
+
+✅ Includes Junior & Senior Developer AI Agents for writing and reviewing code
+
+✅ Displays suggested queries for quick inspiration
+
+Start coding smarter with AI! 🚀
+    """
+)
+
+
+st.sidebar.markdown("### Connect with Hasnain")
+st.sidebar.write("[LinkedIn](https://www.linkedin.com/in/hasnain-ali-developer/)")
+st.sidebar.write("[GitHub](https://github.com/HasnainCodeHub)")
+st.sidebar.write("[Instagram](https://www.instagram.com/i_hasnainaliofficial/)")
+st.sidebar.write("[Facebook](https://www.facebook.com/hasnainazeem.hasnainazeem.1)")
